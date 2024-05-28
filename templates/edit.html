@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            margin-top: 2rem ;
+            background:linear-gradient(to bottom, rgb(62, 91, 218),rgb(1, 91, 165),rgb(207, 214, 243));
+            padding: 4rem 0;
+            border-radius:5px;
+            width: 100%;
+            box-shadow: 5px 5px 15px 0px rgb(99, 99, 99) ;
+        }
+        td label{
+            color: white;
+        }
+        form h1{
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+        form table tr td a{
+            text-align:right;
+        }
+        table tr td{
+            padding: 1rem;
+        }
+        input{
+            outline: none;
+            padding: 0.5rem 1rem;
+        }
+        .btn{
+            background:linear-gradient(to bottom, rgb(99, 127, 248),rgb(1, 91, 165),rgb(201, 208, 240));
+            border:1px solid rgb(132, 174, 238);
+            transition:0.5s;
+            font-size:larger;
+            font-weight: 500;
+            letter-spacing: 1px;
+            
+        }
+        .btn:hover{
+            background:linear-gradient(to bottom, rgb(57, 131, 180),rgb(174, 217, 241),rgb(57, 131, 180));
+            color: black;
+            transform: scale(10px);
+            border:none;
+            border:1px solid rgb(7, 78, 185);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Update data</h1>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><label for="Book name">Book name : </label></td>
+                    <td><input type="text" name="Book name" value="{{data.Book_name}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="Book id">Book id : </label></td>
+                    <td><input type="number" name="Book id" value="{{data.Book_id}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="Author name">Author name : </label></td>
+                    <td><input type="text" name="Author name" value="{{data.Author_name}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="Status">Status : </label></td>
+                    <td><input type="text" name="Status" value="{{data.Status}}"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="Submit" value="Submit" class="btn"></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

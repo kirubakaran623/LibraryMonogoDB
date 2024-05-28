@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+{%block body%}
+ <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    #signup{
+       display: flex;
+       justify-content: center;
+        align-items: center;
+        height: 97vh;
+    }
+    .btn{
+        background-color: rgb(42, 84, 219);
+        color: white;
+        padding: 0.2rem 2rem;
+        margin-top: 2rem;
+    }
+    .username{
+        padding: 0.3rem;
+        border: 1px solid rgb(182, 179, 179);
+        outline: rgb(177, 175, 175);
+        border-radius: 5px;
+
+        font-size: 1rem;
+    }
+    .password{
+        padding: 0.3rem;
+        border: 1px solid rgb(182, 179, 179);
+        outline: rgb(177, 175, 175);
+        border-radius:5px;
+        font-size: 1rem;
+    }
+    .signup{
+        border: 1px solid rgb(190, 190, 190);
+        background-color: rgb(235, 232, 232);
+        width: 30%;
+        padding: 4rem 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+    .signup h1{
+        margin-bottom: 2rem;
+    }
+    .btn:hover{
+        color: white;
+    }
+ </style>
+ <section id="signup">
+<div class="signup">
+    <h1>Signup</h1>
+    <form action=""method="post">
+        {{form.hidden_tag()}}
+        <div class="form-group">
+            <input type="text" placeholder="username"
+            {{form.username(class="username")}}
+        </div>
+        <div class="form-group">
+            <input type="Password" placeholder="password" {{form.password(class="password")}}
+        </div>
+        <div id="btn">
+            {{form.submit(class="btn")}}
+            <a href="{{url_for('login')}}" class="btn">Login</a>
+        </div>
+    </form>
+</div>
+</section>
+{%endblock body%}

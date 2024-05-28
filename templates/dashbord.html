@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table{
+            display: flex;
+            justify-content: center;
+            align-items:start;
+            height: 88vh;
+            margin-top: 4rem;
+        }
+        body{
+            background:gainsboro;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        table{
+            border-collapse:collapse;
+        }
+        table tr th{
+            padding: 1rem 2rem;
+        }
+        tr td{
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav{
+            width: 98%;
+            height: 10%;
+            text-align:start;
+            padding: 1rem;
+          }
+          nav a{
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: large;
+            margin-left: 10px;
+            padding: 0.5rem 2rem;
+          }
+          table tr td a{
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: large;
+            padding: 0.5rem 2rem;
+            border-radius:0px;
+            border-radius:3px;
+            transition: 0.5s;
+            background-color:rgb(67, 132, 230);
+          }
+          .btn{
+            background-color:rgb(67, 132, 230);
+            color: white;
+            border:none;
+            border-radius:3px;
+            transition: 0.5s;
+          }
+          .btn:hover{
+            background-color: rgb(209, 207, 207);
+            color: black;
+          }
+          table tr td a:hover{
+            background-color: rgb(209, 207, 207);
+            color: black;
+          }
+          
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('add')}}" class="btn btn-success">Add Data</a>
+        <a href="{{url_for('logout')}}" class="btn btn-success">Logout</a>
+    </nav>
+    <div class="table">  
+        <table border="1">
+            <tr>
+                <th>Book Id</th>
+                <th>Book name</th>
+                <th>Author Name</th>
+                <th>Status</th>
+                <th colspan="2">Action</th>
+            </tr>
+            {%for i in data%}
+            <tr>
+                <td>{{i.Book_id}}</td>
+                <td>{{i.Book_name}}</td>
+                <td>{{i.Author_name}}</td>
+                <td>{{i.Status}}</td>
+                <td><a href="{{url_for('edit',id=i._id)}}">Edit</a></td>
+                <td><a href="{{url_for('delete',id=i._id)}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
